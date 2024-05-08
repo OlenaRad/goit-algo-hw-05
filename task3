@@ -1,0 +1,47 @@
+import timeit
+
+# Завантаження текстових файлів
+with open("стаття 1.txt", "r", encoding="utf-8") as file:
+    article_1 = file.read()
+
+with open("стаття 2", "r", encoding="utf-8") as file:
+    article_2 = file.read()
+
+# Реалізація алгоритмів пошуку підрядка
+
+def boyer_moore(text, pattern):
+    pass  # Реалізація алгоритму Боєра-Мура
+
+def kmp(text, pattern):
+    pass  # Реалізація алгоритму Кнута-Морріса-Пратта
+
+def rabin_karp(text, pattern):
+    pass  # Реалізація алгоритму Рабіна-Карпа
+
+# Вимірюємо час виконання кожного алгоритму для реального та вигаданого підрядків
+
+real_pattern = "real_pattern_here"
+fake_pattern = "fake_pattern_here"
+
+# Для алгоритму Боєра-Мура
+time_bm_real = timeit.timeit(lambda: boyer_moore(article_1, real_pattern), number=1)
+time_bm_fake = timeit.timeit(lambda: boyer_moore(article_1, fake_pattern), number=1)
+
+# Для алгоритму Кнута-Морріса-Пратта
+time_kmp_real = timeit.timeit(lambda: kmp(article_1, real_pattern), number=1)
+time_kmp_fake = timeit.timeit(lambda: kmp(article_1, fake_pattern), number=1)
+
+# Для алгоритму Рабіна-Карпа
+time_rk_real = timeit.timeit(lambda: rabin_karp(article_1, real_pattern), number=1)
+time_rk_fake = timeit.timeit(lambda: rabin_karp(article_1, fake_pattern), number=1)
+
+# Виведемо результати
+print("Час виконання для статті 1:")
+print("Боєра-Мура (реальний підрядок):", time_bm_real)
+print("Боєра-Мура (вигаданий підрядок):", time_bm_fake)
+print("Кнута-Морріса-Пратта (реальний підрядок):", time_kmp_real)
+print("Кнута-Морріса-Пратта (вигаданий підрядок):", time_kmp_fake)
+print("Рабіна-Карпа (реальний підрядок):", time_rk_real)
+print("Рабіна-Карпа (вигаданий підрядок):", time_rk_fake)
+
+
